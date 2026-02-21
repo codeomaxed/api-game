@@ -1,0 +1,46 @@
+{
+  "Warrior": {
+    "name": "Warrior",
+    "description": "A melee fighter specializing in physical combat",
+    "primaryStat": "STR",
+    "startingSkills": ["basic-attack"],
+    "statBonuses": {
+      "STR": 2,
+      "maxHP": 20
+    }
+  },
+  "Mage": {
+    "name": "Mage",
+    "description": "A spellcaster specializing in magic damage",
+    "primaryStat": "INT",
+    "startingSkills": ["magic-missile"],
+    "statBonuses": {
+      "INT": 2,
+      "Power": 2
+    }
+  },
+  "Rogue": {
+    "name": "Rogue",
+    "description": "A nimble fighter specializing in speed and critical hits",
+    "primaryStat": "DEX",
+    "startingSkills": ["basic-attack"],
+    "statBonuses": {
+      "DEX": 2,
+      "Critical": 5
+    }
+  },
+  "Cleric": {
+    "name": "Cleric",
+    "description": "A support class specializing in healing and protection",
+    "primaryStat": "PIE",
+    "startingSkills": ["heal"],
+    "statBonuses": {
+      "PIE": 2,
+      "Resistance": 5
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,33 @@
+{
+  "name": "rpg-game",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^14.0.0",
+    "_comment_fal_ai": "@fal-ai/client is no longer used - replaced with ComfyUI",
+    "openai": "^4.20.0",
+    "zustand": "^4.4.7",
+    "@tensorflow/tfjs": "^4.15.0",
+    "@tensorflow-models/coco-ssd": "^2.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "^14.0.0"
+  }
+}
+

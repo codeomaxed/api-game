@@ -1,0 +1,75 @@
+# =========================
+# ComfyUI (too large for git)
+# =========================
+Image Generator/ComfyUI_windows_portable/
+
+# =========================
+# Node.js
+# =========================
+node_modules/
+package-lock.json
+.pnp
+.pnp.js
+
+# =========================
+# Next.js
+# =========================
+.next/
+out/
+build/
+dist/
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env*.local
+.env.development
+.env.production
+.env.test
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+*.pyo
+venv/
+.venv/
+
+# =========================
+# Godot
+# =========================
+.godot/
+*.import
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# =========================
+# Build / Temp
+# =========================
+*.log
+*.tmp
+*.temp
+*.cache
+.cache/
+*.tsbuildinfo
+.vercel

@@ -1,0 +1,39 @@
+[
+  {
+    "id": "basic-attack",
+    "name": "Basic Attack",
+    "description": "A simple physical attack",
+    "primaryStat": "STR",
+    "power": 10,
+    "skillPower": 150,
+    "cooldown": 0
+  },
+  {
+    "id": "magic-missile",
+    "name": "Magic Missile",
+    "description": "A basic magic attack",
+    "primaryStat": "INT",
+    "power": 15,
+    "skillPower": 180,
+    "cooldown": 2
+  },
+  {
+    "id": "heal",
+    "name": "Heal",
+    "description": "Restores HP",
+    "primaryStat": "PIE",
+    "power": 20,
+    "skillPower": 100,
+    "cooldown": 3,
+    "effects": [
+      {
+        "type": "heal",
+        "value": 50
+      }
+    ]
+  }
+]
+
+
+
+

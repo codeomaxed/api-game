@@ -1,0 +1,19 @@
+{
+  "description": "You step through the arched stone passageway, the air growing colder as you move deeper into the dungeon. The corridor curves to your left, and you can see another passageway continuing ahead. The stone walls are damp with moisture, and faint torchlight flickers in the distance.",
+  "choices": [
+    {
+      "id": "go_left",
+      "text": "[LEFT] Continue down the left passage",
+      "direction": "left"
+    },
+    {
+      "id": "go_ahead",
+      "text": "[AHEAD] Continue straight ahead",
+      "direction": "ahead"
+    }
+  ]
+}
+
+
+
+

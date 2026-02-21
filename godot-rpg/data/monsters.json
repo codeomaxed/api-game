@@ -1,0 +1,24 @@
+[
+  {
+    "id": "skeleton",
+    "name": "Skeleton",
+    "visualDescription": "a skeletal warrior clad in rusted chainmail, its empty eye sockets glowing with a faint crimson light, wielding a notched longsword. The bones are yellowed with age, and tattered cloth hangs from its frame. Heavy cross-hatching shadows define its form.",
+    "combatDescription": "A skeletal warrior rises from the shadows, its bones clicking as it moves. Rusted chainmail hangs loosely from its frame, and crimson light flickers in its empty eye sockets.",
+    "tier": "common",
+    "minLevel": 1,
+    "xp": 50
+  },
+  {
+    "id": "slime",
+    "name": "Gelatinous Slime",
+    "visualDescription": "a massive translucent ooze, its body a sickly green-yellow with visible bones and debris suspended within. It pulses and quivers, leaving a corrosive trail. Ink-wash technique shows its semi-transparent nature against the dark stone floor.",
+    "combatDescription": "A gelatinous slime oozes forward, its translucent body revealing the bones of previous victims. It leaves a corrosive trail that sizzles on the stone floor.",
+    "tier": "common",
+    "minLevel": 1,
+    "xp": 25
+  }
+]
+
+
+
+

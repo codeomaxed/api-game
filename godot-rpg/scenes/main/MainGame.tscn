@@ -1,0 +1,270 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqj8k3x7v2n1m"]
+
+[ext_resource type="Script" uid="uid://1h7cii2jkdac" path="res://scripts/ui/MainGameUI.gd" id="1_main_game_ui"]
+[ext_resource type="Script" uid="uid://btjyl1lfv64js" path="res://scripts/ui/DungeonMiniMap.gd" id="2_1vfbg"]
+[ext_resource type="Script" path="res://scripts/ui/ProfileSectionUI.gd" id="3_profile_section"]
+[ext_resource type="Script" path="res://scripts/ui/InventoryUI.gd" id="4_inventory_ui"]
+[ext_resource type="PackedScene" uid="uid://fk401qw40uh0" path="res://scenes/ui/CharacterCreationUI.tscn" id="2_t7ssr"]
+
+[node name="MainGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main_game_ui")
+
+[node name="MainLayout" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPanel" type="Control" parent="MainLayout"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 0)
+theme_override_colors/background = Color(0.05, 0.05, 0.05, 1)
+z_index = 1
+
+[node name="ProfileSection" type="Control" parent="MainLayout/LeftPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 296.0
+offset_bottom = 250.0
+grow_vertical = 0
+clip_contents = true
+script = ExtResource("3_profile_section")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainLayout/LeftPanel/ProfileSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PortraitContainer" type="VBoxContainer" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Portrait" type="TextureRect" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/PortraitContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 80)
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/PortraitContainer"]
+layout_mode = 2
+text = "Character Name"
+horizontal_alignment = 1
+
+[node name="InfoContainer" type="VBoxContainer" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TopRow" type="VBoxContainer" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer"]
+layout_mode = 2
+
+[node name="LevelRow" type="HBoxContainer" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/TopRow"]
+layout_mode = 2
+
+[node name="LevelJobLabel" type="Label" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/TopRow/LevelRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lvl 1 Warrior"
+autowrap_mode = 0
+clip_contents = false
+
+[node name="FloorPowerLabel" type="Label" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/TopRow/LevelRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Floor 1 • Power 10"
+autowrap_mode = 0
+clip_contents = false
+
+[node name="StatsContainer" type="HBoxContainer" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="STRLabel" type="Label" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/TopRow/StatsContainer"]
+layout_mode = 2
+text = "STR 10"
+
+[node name="DEXLabel" type="Label" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/TopRow/StatsContainer"]
+layout_mode = 2
+text = "DEX 10"
+
+[node name="INTLabel" type="Label" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/TopRow/StatsContainer"]
+layout_mode = 2
+text = "INT 10"
+
+[node name="PIELabel" type="Label" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/TopRow/StatsContainer"]
+layout_mode = 2
+text = "PIE 10"
+
+[node name="ArmorLabel" type="Label" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/TopRow/StatsContainer"]
+layout_mode = 2
+text = "ARM 0"
+
+[node name="BarsContainer" type="VBoxContainer" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer"]
+layout_mode = 2
+
+[node name="HPBar" type="ProgressBar" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/BarsContainer"]
+layout_mode = 2
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="HPLabel" type="Label" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/BarsContainer/HPBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -7.0
+offset_right = 30.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100/100"
+horizontal_alignment = 1
+
+[node name="XPBar" type="ProgressBar" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/BarsContainer"]
+layout_mode = 2
+max_value = 100.0
+value = 0.0
+show_percentage = false
+
+[node name="XPLabel" type="Label" parent="MainLayout/LeftPanel/ProfileSection/HBoxContainer/InfoContainer/BarsContainer/XPBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -7.0
+offset_right = 30.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0/100"
+horizontal_alignment = 1
+
+[node name="InventorySection" type="Control" parent="MainLayout/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_inventory_ui")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainLayout/LeftPanel/InventorySection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EquipmentSection" type="VBoxContainer" parent="MainLayout/LeftPanel/InventorySection/VBoxContainer"]
+layout_mode = 2
+
+[node name="EquipmentLabel" type="Label" parent="MainLayout/LeftPanel/InventorySection/VBoxContainer/EquipmentSection"]
+layout_mode = 2
+text = "Equipment"
+horizontal_alignment = 1
+
+[node name="EquipmentGrid" type="GridContainer" parent="MainLayout/LeftPanel/InventorySection/VBoxContainer/EquipmentSection"]
+layout_mode = 2
+columns = 2
+
+[node name="InventorySection" type="VBoxContainer" parent="MainLayout/LeftPanel/InventorySection/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InventoryLabel" type="Label" parent="MainLayout/LeftPanel/InventorySection/VBoxContainer/InventorySection"]
+layout_mode = 2
+text = "Inventory"
+horizontal_alignment = 1
+
+[node name="InventoryList" type="ItemList" parent="MainLayout/LeftPanel/InventorySection/VBoxContainer/InventorySection"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CenterPanel" type="Control" parent="MainLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+clip_contents = true
+
+[node name="RoomImage" type="TextureRect" parent="MainLayout/CenterPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="MainLayout/CenterPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="MainLayout/CenterPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = -20.0
+grow_vertical = 0
+z_index = 10
+mouse_filter = 2
+visible = true
+z_index = 1
+mouse_filter = 2
+
+[node name="RightPanel" type="Control" parent="MainLayout"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 0)
+theme_override_colors/background = Color(0.05, 0.05, 0.05, 1)
+z_index = 1
+
+[node name="MiniMap" type="Control" parent="MainLayout/RightPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_1vfbg")
+
+[node name="CharacterCreationUI" parent="." instance=ExtResource("2_t7ssr")]
+layout_mode = 1

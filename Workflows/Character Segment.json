@@ -1,0 +1,92 @@
+{
+  "1": {
+    "inputs": {
+      "mask": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "AILab_MaskPreview",
+    "_meta": {
+      "title": "Mask Preview (RMBG) 🎭"
+    }
+  },
+  "2": {
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "3": {
+    "inputs": {
+      "sensitivity": 1,
+      "mask_blur": 0,
+      "mask_offset": 0,
+      "smooth": 0,
+      "fill_holes": false,
+      "invert_output": false,
+      "mask": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "AILab_MaskEnhancer",
+    "_meta": {
+      "title": "Mask Enhancer (RMBG) 🖼️"
+    }
+  },
+  "4": {
+    "inputs": {
+      "prompt": "character",
+      "sam3_model": "sam3",
+      "device": "Auto",
+      "confidence_threshold": 0.5,
+      "mask_blur": 0,
+      "mask_offset": 0,
+      "invert_output": false,
+      "unload_model": false,
+      "background": "Alpha",
+      "background_color": "#222222",
+      "image": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "SAM3Segment",
+    "_meta": {
+      "title": "SAM3 Segmentation (RMBG)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "6",
+        0
+      ],
+      "mask": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "SaveImageWithAlpha",
+    "_meta": {
+      "title": "Save Image With Alpha (Swwan)"
+    }
+  },
+  "6": {
+    "inputs": {
+      "image": "pasted/image.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  }
+}

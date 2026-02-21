@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Dark Fantasy RPG"
+run/main_scene="res://scenes/main/MainGame.tscn"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+CharacterManager="*res://scripts/autoload/CharacterManager.gd"
+DungeonGenerator="*res://scripts/autoload/DungeonGenerator.gd"
+CombatManager="*res://scripts/autoload/CombatManager.gd"
+AssetLoader="*res://scripts/autoload/AssetLoader.gd"
+RoomImageManager="*res://scripts/autoload/RoomImageManager.gd"
+MonsterImageManager="*res://scripts/autoload/MonsterImageManager.gd"
+NarrativeManager="*res://scripts/autoload/NarrativeManager.gd"
+AudioManager="*res://scripts/autoload/AudioManager.gd"
+InventoryManager="*res://scripts/autoload/InventoryManager.gd"
+MonsterDatabase="*res://scripts/autoload/MonsterDatabase.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=2
+
+
