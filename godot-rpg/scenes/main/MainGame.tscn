@@ -82,6 +82,7 @@ layout_mode = 2
 [node name="CenterEquip" type="PanelContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 8
 
 [node name="CenterEquipInner" type="VBoxContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper/CenterEquip"]
 layout_mode = 2
