@@ -83,10 +83,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
+size_flags_stretch_ratio = 1.0
+custom_minimum_size = Vector2(0, 120)
 
 [node name="CenterEquipInner" type="VBoxContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper/CenterEquip"]
 layout_mode = 2
 alignment = 1
+size_flags_vertical = 8
 
 [node name="SwordIcon" type="Label" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper/CenterEquip/CenterEquipInner"]
 layout_mode = 2
