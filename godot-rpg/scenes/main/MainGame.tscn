@@ -184,7 +184,7 @@ text = "Character
 Name"
 
 [node name="StatsInfo" type="VBoxContainer" parent="MainVBox/MainLayout/CenterPanel/HUDContainer"]
-custom_minimum_size = Vector2(260, 0)
+custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 6
