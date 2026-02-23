@@ -58,7 +58,7 @@ func _draw_minimap() -> void:
 
 	var map_w := (max_x - min_x + 1) * CELL_SIZE
 	var map_h := (max_y - min_y + 1) * CELL_SIZE
-	var zoom := min(size.x / map_w, size.y / map_h) if map_w > 0 and map_h > 0 else 1.0
+	var zoom: float = min(size.x / float(map_w), size.y / float(map_h)) if map_w > 0 and map_h > 0 else 1.0
 	zoom = min(zoom, 1.0)
 
 	var offset_x = (size.x / 2.0) - ((min_x + max_x) / 2.0) * CELL_SIZE * zoom
@@ -215,7 +215,7 @@ func _get_node_at_position(local_pos: Vector2) -> DungeonNode:
 		max_y = max(max_y, n.y)
 	var map_w := (max_x - min_x + 1) * CELL_SIZE
 	var map_h := (max_y - min_y + 1) * CELL_SIZE
-	var zoom := min(size.x / map_w, size.y / map_h) if map_w > 0 and map_h > 0 else 1.0
+	var zoom: float = min(size.x / float(map_w), size.y / float(map_h)) if map_w > 0 and map_h > 0 else 1.0
 	zoom = min(zoom, 1.0)
 	var offset_x = (size.x / 2.0) - ((min_x + max_x) / 2.0) * CELL_SIZE * zoom
 	var offset_y = (size.y / 2.0) - ((min_y + max_y) / 2.0) * CELL_SIZE * zoom
