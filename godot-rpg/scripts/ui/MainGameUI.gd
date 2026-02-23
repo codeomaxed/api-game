@@ -141,7 +141,7 @@ func _apply_all_styles() -> void:
 		equipment_label.add_theme_color_override("font_color", AAA.GOLD_MUTED)
 		equipment_label.add_theme_font_size_override("font_size", 15)
 	if equipment_wrapper:
-		equipment_wrapper.add_theme_constant_override("separation", 25)
+		equipment_wrapper.add_theme_constant_override("separation", 15)
 
 	# Center Equipment panel
 	if center_equip:
