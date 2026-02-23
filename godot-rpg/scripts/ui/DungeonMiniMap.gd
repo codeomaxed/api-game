@@ -90,7 +90,7 @@ func _draw_minimap() -> void:
 func _draw_node(node: DungeonNode, ox: float, oy: float, zoom: float, is_visited: bool, has_override: bool) -> void:
 	var pos := Vector2(node.x * CELL_SIZE * zoom + ox, node.y * CELL_SIZE * zoom + oy)
 	var is_boss := node.type == DungeonNode.RoomType.BOSS
-	var r := (NODE_RADIUS_BOSS if is_boss else NODE_RADIUS) * zoom
+	var r = (NODE_RADIUS_BOSS if is_boss else NODE_RADIUS) * zoom
 	var is_current := node.id == DungeonGenerator.player_location
 
 	if is_current:
@@ -224,7 +224,7 @@ func _get_node_at_position(local_pos: Vector2) -> DungeonNode:
 			continue
 		var node: DungeonNode = DungeonGenerator.nodes[node_id]
 		var pos := Vector2(node.x * CELL_SIZE * zoom + offset_x, node.y * CELL_SIZE * zoom + offset_y)
-		var r := (NODE_RADIUS_BOSS if node.type == DungeonNode.RoomType.BOSS else NODE_RADIUS) * zoom
+		var r = (NODE_RADIUS_BOSS if node.type == DungeonNode.RoomType.BOSS else NODE_RADIUS) * zoom
 		if pos.distance_to(local_pos) <= r + 5:
 			return node
 	return null
