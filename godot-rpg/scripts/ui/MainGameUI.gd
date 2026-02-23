@@ -168,8 +168,8 @@ func _apply_all_styles() -> void:
 	# HUD bar labels
 	for lbl in [hp_label, xp_label]:
 		if lbl:
-			lbl.add_theme_font_size_override("font_size", 15)
-			lbl.add_theme_color_override("font_color", AAA.BONE)
+			lbl.add_theme_font_size_override("font_size", 11)
+			lbl.add_theme_color_override("font_color", AAA.ASH)
 
 	# HP / XP Bars
 	if hp_bar:
@@ -182,12 +182,12 @@ func _apply_all_styles() -> void:
 	# Bar value labels
 	for lbl in [hp_value_label, xp_value_label]:
 		if lbl:
-			lbl.add_theme_font_size_override("font_size", 13)
+			lbl.add_theme_font_size_override("font_size", 11)
 			lbl.add_theme_color_override("font_color", AAA.BONE)
 
 	# Char class label
 	if char_class_label:
-		char_class_label.add_theme_font_size_override("font_size", 24)
+		char_class_label.add_theme_font_size_override("font_size", 16)
 		char_class_label.add_theme_color_override("font_color", AAA.BONE)
 
 	# Map section
@@ -348,16 +348,16 @@ func _build_attribute_labels() -> void:
 		child.queue_free()
 	for stat_name in ["STR", "DEX", "INT", "PIE", "ARM"]:
 		var hb := HBoxContainer.new()
-		hb.add_theme_constant_override("separation", 4)
+		hb.add_theme_constant_override("separation", 3)
 		var name_lbl := Label.new()
 		name_lbl.text = stat_name
-		name_lbl.add_theme_font_size_override("font_size", 12)
-		name_lbl.add_theme_color_override("font_color", AAA.GOLD_MUTED)
+		name_lbl.add_theme_font_size_override("font_size", 13)
+		name_lbl.add_theme_color_override("font_color", AAA.GOLD_BRIGHT)
 		hb.add_child(name_lbl)
 		var val_lbl := Label.new()
 		val_lbl.text = "10"
-		val_lbl.add_theme_font_size_override("font_size", 14)
-		val_lbl.add_theme_color_override("font_color", AAA.ASH)
+		val_lbl.add_theme_font_size_override("font_size", 13)
+		val_lbl.add_theme_color_override("font_color", AAA.BONE)
 		hb.add_child(val_lbl)
 		attributes_hbox.add_child(hb)
 		_attr_labels[stat_name] = val_lbl

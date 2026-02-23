@@ -144,16 +144,16 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 50.0
-offset_top = -185.0
+offset_top = -140.0
 offset_right = 700.0
 offset_bottom = -50.0
 grow_vertical = 0
 mouse_filter = 2
 z_index = 20
-theme_override_constants/separation = 25
+theme_override_constants/separation = 20
 
 [node name="PortraitBox" type="PanelContainer" parent="MainVBox/MainLayout/CenterPanel/HUDContainer"]
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -187,11 +187,11 @@ Name"
 custom_minimum_size = Vector2(520, 0)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 16
+theme_override_constants/separation = 6
 
 [node name="StatsTop" type="HBoxContainer" parent="MainVBox/MainLayout/CenterPanel/HUDContainer/StatsInfo"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 16
 
 [node name="CharClass" type="Label" parent="MainVBox/MainLayout/CenterPanel/HUDContainer/StatsInfo/StatsTop"]
 layout_mode = 2
@@ -199,11 +199,11 @@ text = "Lvl 1 Warrior"
 
 [node name="Attributes" type="HBoxContainer" parent="MainVBox/MainLayout/CenterPanel/HUDContainer/StatsInfo/StatsTop"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 12
 
 [node name="HPBarWrapper" type="HBoxContainer" parent="MainVBox/MainLayout/CenterPanel/HUDContainer/StatsInfo"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 8
 
 [node name="HPLabel" type="Label" parent="MainVBox/MainLayout/CenterPanel/HUDContainer/StatsInfo/HPBarWrapper"]
 custom_minimum_size = Vector2(25, 0)
@@ -211,7 +211,7 @@ layout_mode = 2
 text = "HP"
 
 [node name="HPBarBG" type="Control" parent="MainVBox/MainLayout/CenterPanel/HUDContainer/StatsInfo/HPBarWrapper"]
-custom_minimum_size = Vector2(0, 12)
+custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -239,7 +239,7 @@ horizontal_alignment = 2
 
 [node name="XPBarWrapper" type="HBoxContainer" parent="MainVBox/MainLayout/CenterPanel/HUDContainer/StatsInfo"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 8
 
 [node name="XPLabel" type="Label" parent="MainVBox/MainLayout/CenterPanel/HUDContainer/StatsInfo/XPBarWrapper"]
 custom_minimum_size = Vector2(25, 0)
@@ -247,7 +247,7 @@ layout_mode = 2
 text = "XP"
 
 [node name="XPBarBG" type="Control" parent="MainVBox/MainLayout/CenterPanel/HUDContainer/StatsInfo/XPBarWrapper"]
-custom_minimum_size = Vector2(0, 12)
+custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
