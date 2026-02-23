@@ -73,7 +73,6 @@ text = "EQUIPMENT"
 
 [node name="EquipmentWrapper" type="HBoxContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection"]
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="LeftSlots" type="VBoxContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper"]
 custom_minimum_size = Vector2(90, 0)
@@ -82,14 +81,10 @@ layout_mode = 2
 [node name="CenterEquip" type="PanelContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 8
-size_flags_stretch_ratio = 1.0
-custom_minimum_size = Vector2(0, 120)
 
 [node name="CenterEquipInner" type="VBoxContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper/CenterEquip"]
 layout_mode = 2
 alignment = 1
-size_flags_vertical = 8
 
 [node name="SwordIcon" type="Label" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper/CenterEquip/CenterEquipInner"]
 layout_mode = 2
