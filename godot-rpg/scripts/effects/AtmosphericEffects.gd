@@ -551,7 +551,7 @@ func update_from_room_texture(texture: Texture2D, room_image_control: Control, r
 	var tex_size := Vector2(64, 64)
 	if texture:
 		tex_size = texture.get_size()
-	var draw_scale: float = mini(container_size.x / tex_size.x, container_size.y / tex_size.y)
+	var draw_scale: float = minf(container_size.x / tex_size.x, container_size.y / tex_size.y)
 	var draw_size := tex_size * draw_scale
 	var offset := (container_size - draw_size) / 2.0
 	_room_type = room_type
