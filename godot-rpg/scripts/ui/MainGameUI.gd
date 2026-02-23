@@ -266,10 +266,27 @@ func _build_equipment_slots() -> void:
 	left_slots.add_theme_constant_override("separation", 8)
 	right_slots.add_theme_constant_override("separation", 8)
 
+	var left_margin := MarginContainer.new()
+	left_margin.add_theme_constant_override("margin_left", 10)
+	left_margin.size_flags_horizontal = Control.SIZE_FILL
+	left_margin.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	var left_inner := VBoxContainer.new()
+	left_inner.add_theme_constant_override("separation", 8)
+	left_margin.add_child(left_inner)
+	left_slots.add_child(left_margin)
 	for slot in _left_column_slots:
-		left_slots.add_child(_create_equip_slot(slot))
+		left_inner.add_child(_create_equip_slot(slot))
+
+	var right_margin := MarginContainer.new()
+	right_margin.add_theme_constant_override("margin_right", 10)
+	right_margin.size_flags_horizontal = Control.SIZE_FILL
+	right_margin.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	var right_inner := VBoxContainer.new()
+	right_inner.add_theme_constant_override("separation", 8)
+	right_margin.add_child(right_inner)
+	right_slots.add_child(right_margin)
 	for slot in _right_column_slots:
-		right_slots.add_child(_create_equip_slot(slot))
+		right_inner.add_child(_create_equip_slot(slot))
 
 func _create_equip_slot(slot: String) -> Button:
 	var btn := Button.new()
