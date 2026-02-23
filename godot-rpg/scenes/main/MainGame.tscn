@@ -75,7 +75,7 @@ text = "EQUIPMENT"
 layout_mode = 2
 
 [node name="LeftSlots" type="VBoxContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper"]
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
 [node name="CenterEquip" type="PanelContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper"]
@@ -97,7 +97,7 @@ text = "Character Name"
 horizontal_alignment = 1
 
 [node name="RightSlots" type="VBoxContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox/EquipmentSection/EquipmentWrapper"]
-custom_minimum_size = Vector2(70, 0)
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 
 [node name="InventorySection" type="PanelContainer" parent="MainVBox/MainLayout/LeftPanel/LeftVBox"]
