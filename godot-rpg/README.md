@@ -1,121 +1,70 @@
-# Dark Fantasy RPG - Godot 4.5.1
+# Veternum - Dark Fantasy Image-Driven RPG (Godot 4.5)
 
-This is the Godot 4.5.1 port of the browser-based D&D 5e RPG game. All features from the original browser version are preserved, but images and narrative text are pre-generated and loaded from organized folder structures.
+Veternum is a run-based dark fantasy RPG built around:
+- a camp hub,
+- node-based dungeon descents,
+- timer-driven turn combat,
+- narrative event flags,
+- and rebirth/meta progression.
 
-## Project Structure
+The game is designed as an image-first experience: room and monster art are mostly pre-authored assets, with systems layering combat, narrative, and progression over those scenes.
 
-```
-godot-rpg/
-├── project.godot              # Godot project configuration
-├── scenes/                    # Scene files
-│   ├── main/                  # Main game scenes
-│   │   └── MainGame.tscn
-│   └── ui/                    # UI scenes
-│       ├── CombatUI.tscn
-│       ├── CharacterCreationUI.tscn
-│       └── InventoryUI.tscn
-├── scripts/                   # GDScript files
-│   ├── autoload/              # Singleton managers
-│   │   ├── CharacterManager.gd
-│   │   ├── DungeonGenerator.gd
-│   │   ├── CombatManager.gd
-│   │   ├── AssetLoader.gd
-│   │   ├── RoomImageManager.gd
-│   │   ├── MonsterImageManager.gd
-│   │   ├── NarrativeManager.gd
-│   │   ├── AudioManager.gd
-│   │   ├── InventoryManager.gd
-│   │   └── MonsterDatabase.gd
-│   ├── resources/              # Resource classes
-│   │   ├── Character.gd
-│   │   ├── Monster.gd
-│   │   ├── Item.gd
-│   │   ├── DungeonNode.gd
-│   │   ├── Job.gd
-│   │   ├── Skill.gd
-│   │   └── BuriedbornesStats.gd
-│   ├── ui/                    # UI scripts
-│   │   ├── MainGameUI.gd
-│   │   ├── CombatUI.gd
-│   │   ├── CharacterCreationUI.gd
-│   │   ├── InventoryUI.gd
-│   │   ├── DungeonMiniMap.gd
-│   │   └── AdventureLogUI.gd
-│   └── effects/               # Visual effects
-│       ├── AtmosphericEffects.gd
-│       └── MonsterGlow.gd
-├── assets/                    # Pre-generated assets
-│   ├── monsters/              # Monster images
-│   │   ├── Skeleton/
-│   │   │   ├── background.png
-│   │   │   └── segmented.png
-│   │   ├── Orc/
-│   │   └── ...
-│   └── rooms/                 # Room images
-│       ├── Turn Left/
-│       ├── Turn Right/
-│       ├── T Junction/
-│       └── ...
-├── data/                      # Data files
-│   ├── narratives/           # Pre-generated narrative text
-│   │   ├── room_descriptions/
-│   │   ├── combat_descriptions/
-│   │   └── story_events/
-│   ├── monsters.json         # Monster definitions
-│   ├── items.json            # Item definitions
-│   ├── skills.json           # Skill definitions
-│   └── jobs.json             # Job definitions
-└── audio/                     # Audio files
-    ├── music/
-    └── sfx/
-```
+## Start Here (for humans + LLMs)
 
-## Asset Organization
+If you are onboarding to this repository, read in this order:
 
-### Monster Images
-Place monster images in `res://assets/monsters/[MonsterName]/`:
-- `background.png` - Room with monster
-- `segmented.png` - Transparent monster cutout
-- `segmented_animated.png` - Optional animated version
+1. `LLM_ONBOARDING.md` - complete project orientation
+2. `ARCHITECTURE.md` - technical system map and signal flow
+3. `STORY_BIBLE.md` - setting, tone, locations, arc state
+4. `DATA_DICTIONARY.md` - JSON/resource schemas and runtime meaning
+5. `DEVELOPMENT_GUIDE.md` - implementation workflow and extension patterns
 
-### Room Images
-Place room images in `res://assets/rooms/[RoomType]/`:
-- Room types: `Turn Left`, `Turn Right`, `T Junction`, `Dead End`, `Straight`, `Boss Chamber`, `Treasure Room`, `Merchant`
-- Multiple variations per type: `room_001.png`, `room_002.png`, etc.
+## Quick Snapshot
 
-### Narrative Text
-Place narrative JSON files in `res://data/narratives/`:
-- Room descriptions: `room_descriptions/[room_type]_[topology]_[variation].json`
-- Combat descriptions: `combat_descriptions/[monster_id]_[action_type]_[variation].json`
-- Story events: `story_events/[event_id].json`
+- **Engine:** Godot `4.5` (`project.godot`)
+- **Main scene:** `res://scenes/main/MainGame.tscn`
+- **Main orchestrator script:** `scripts/ui/MainGameUI.gd`
+- **Core game modes:** `CAMP`, `DUNGEON`, `COMBAT` (`scripts/autoload/GameSession.gd`)
+- **Run model:** floor/wave encounters with boss-gated progression (`scripts/autoload/RunStateManager.gd`)
+- **Combat model:** timer-driven turn loop + skill/effect system (`scripts/autoload/CombatManager.gd`)
+- **Persistent state:** `GameState` + `SaveService` (`scripts/autoload/GameState.gd`, `scripts/autoload/SaveService.gd`)
 
-## Features
+## Current Core Loop
 
-- **Character System**: Creation, stats, leveling (Buriedbornes-style)
-- **Dungeon Generation**: Procedural dungeon with rooms and navigation
-- **Combat System**: Turn-based combat with skills and status effects
-- **Inventory System**: Equipment and item management
-- **Monster System**: Monster database with scaling and display
-- **Asset Loading**: Efficient loading of pre-generated images
-- **Narrative System**: Pre-generated text with variation selection
-- **Visual Effects**: Fog, water drops, lighting, monster glow
-- **Audio System**: Sound effects and music
+1. Start in camp (dialogue, management, prep).
+2. Begin a run.
+3. Clear combat encounters and floor boss.
+4. Choose to continue deeper or leave to camp.
+5. Spend resources, unlock systems, and eventually rebirth for Hemalith.
 
-## Getting Started
+## Controls (default)
 
-1. Open the project in Godot 4.5.1
-2. Generate and organize your images in the `assets/` folder structure
-3. Generate and organize your narrative text in the `data/narratives/` folder structure
-4. Export monster/item/skill definitions to JSON in `data/`
-5. Run the game!
+Defined via `MainGameUI.gd`:
+- `Esc` pause
+- `Tab` map
+- `I` inventory
+- `Q` lamp
+- `1`/`2`/`3` material select (wood/rock/iron)
+- `Space` material click
+- `E` collect sparkle
+- `B` hold-buy material familiar
 
-## Notes
+## High-Value Paths
 
-- All images must be pre-generated using ComfyUI before running the game
-- Narrative text must be pre-generated as JSON files
-- The game logic matches the browser version, just ported to GDScript
-- UI uses Godot's Control nodes instead of React components
-- Visual effects use Godot's particle systems and shaders
+- `scripts/autoload/` - authoritative gameplay systems
+- `scripts/ui/` - runtime UI orchestration and interaction
+- `scripts/resources/` - data model classes
+- `data/` - jobs/skills/items/monsters + narrative JSON
+- `assets/` - image/audio/font resources
+- `obsidian/` - design/lore planning vault used during development
+
+## Documentation Intent
+
+This repo now includes comprehensive onboarding docs intended so another LLM (or new developer) can infer:
+- what the game is,
+- how story and systems connect,
+- where to implement changes safely,
+- and how to extend content without breaking the runtime model.
 
 
 
